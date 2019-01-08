@@ -1,0 +1,35 @@
+{
+  "name": "live-scores",
+  "version": "1.0.0",
+  "description": "get live scores from around the world",
+  "main": "src/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "4"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@sendgrid/mail": "^6.3.1",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.3",
+    "ejs": "^2.6.1",
+    "express-flash": "0.0.2",
+    "express-session": "^1.15.6",
+    "express-validator": "^5.3.1",
+    "jasmine": "^3.3.1",
+    "morgan": "^1.9.1",
+    "passport": "^0.4.0",
+    "pg": "^7.7.1",
+    "pg-hstore": "^2.3.2",
+    "request": "^2.88.0",
+    "sendgrid": "^5.2.3",
+    "sequelize": "^4.42.0",
+    "sequelize-cli": "^5.4.0",
+    "sports-live": "^1.0.1",
+    "stripe": "^6.20.0"
+  }
+}
