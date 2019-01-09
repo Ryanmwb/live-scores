@@ -4,6 +4,10 @@ const server = http.createServer(app);
 const port = normalizePort(process.env.PORT || "3000")
 app.set("port", port);
 
+/*app.set('views',__dirname+'/views');
+app.set('view engine', 'ejs');
+app.engine('html',
+require('ejs').renderFile);*/
 
 function normalizePort(val) {
     const port = parseInt(val, 10);

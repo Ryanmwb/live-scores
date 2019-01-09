@@ -1,16 +1,48 @@
-const express = require("express");
-const router = express.Router();
-const userController = require("../controllers/userController");
-const validation = require("./validation")
+const passport = require("passport");
+const LocalStrategy = require("passport-local").Strategy;
+const User = require("../db/models").User;
+const authHelper = require("../auth/helpers");
 
-router.get("/users/signup", userController.signUp);
-router.post("/user", validation.validateUsers, userController.create);
-router.get("/users/signIn", userController.signInForm);
-router.post("/users/signIn", validation.validateUsers, userController.signIn);
-router.get("/users/signOut", userController.signOut);
-router.get("/users/upgrade_form", userController.upgradeForm);
-router.post("/charge", userController.charge);
-router.post("/users/downgrade", userController.downgrade);
-router.get("/users/downgrade_form", userController.downgradeForm);
+module.exports = {
+  init(app){
 
-module.exports = router;
+// #2
+    app.use(passport.initialize());
+    app.use(passport.session());
+
+// #3
+    passport.use(new LocalStrategy({
+      usernameField: "email"
+    }, (email, password, done) => {
+      User.findOne({
+        where: { email }
+      })
+      .then((user) => {
+
+// #4
+        if (!user || !authHelper.comparePass(password, user.password)) {
+          return done(null, false, { message: "Invalid email or password" });
+        }
+// #5
+        return done(null, user);
+      })
+    }));
+
+// #6
+    passport.serializeUser((user, callback) => {
+      callback(null, user.id);
+    });
+
+// #7
+    passport.deserializeUser((id, callback) => {
+      User.findById(id)
+      .then((user) => {
+        callback(null, user);
+      })
+      .catch((err =>{
+        callback(err, user);
+      }))
+
+    });
+  }
+}
