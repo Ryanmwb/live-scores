@@ -7,8 +7,6 @@ module.exports = {
                 console.log("error message is...") 
                 console.log(err.message); 
             } else { 
-                console.log("firing display")
-                console.log(games)
                 res.render("scores/scores", {games})
             } 
         }); 
@@ -19,8 +17,6 @@ module.exports = {
                 console.log("error message is...") 
                 console.log(err.message); 
             } else { 
-                console.log("firing display")
-                console.log(games)
                 res.render("scores/scores", {games})
             } 
         }); 
