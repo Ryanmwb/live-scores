@@ -1,18 +1,31 @@
 
 module.exports = {
-    display(req, res, next){
+    soccer(req, res, next){
         var api = require('sports-live')
 
-        var tennisScores = api.getAllMatches('soccer','muslim', function(err,matches){ 
+        var soccerScores = api.getAllMatches('soccer','insert team name here', function(err, games){ 
             if (err) { 
-                console.log(err); 
+                console.log("error message is...") 
+                console.log(err.message); 
             } else { 
-                console.log(matches); 
+                console.log("firing display")
+                console.log(games)
+                res.render("scores/scores", {games})
             } 
-        });
+        }); 
+    }, 
+    football(req, res, next){
+        var api = require('sports-live')
 
-        console.log("firing display")
-        tennisScores
-        res.render("scores/scores")
-    }
+        var soccerScores = api.getAllMatches('football',/*'insert team name here',*/ function(err, games){ 
+            if (err) {
+                console.log("error message is...") 
+                console.log(err.message); 
+            } else { 
+                console.log("firing display")
+                console.log(games)
+                res.render("scores/scores", {games})
+            } 
+        }); 
+    }, 
 }
