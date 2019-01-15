@@ -1,9 +1,8 @@
+var api = require('sports-live')
 
 module.exports = {
     soccer(req, res, next){
-        var api = require('sports-live')
-
-        var soccerScores = api.getAllMatches('soccer','insert team name here', function(err, games){ 
+        api.getAllMatches('soccer',  function(err, games){ 
             if (err) { 
                 console.log("error message is...") 
                 console.log(err.message); 
@@ -15,9 +14,7 @@ module.exports = {
         }); 
     }, 
     football(req, res, next){
-        var api = require('sports-live')
-
-        var soccerScores = api.getAllMatches('football',/*'insert team name here',*/ function(err, games){ 
+        api.getAllMatches('football',/*'insert team name here',*/ function(err, games){ 
             if (err) {
                 console.log("error message is...") 
                 console.log(err.message); 
@@ -28,4 +25,34 @@ module.exports = {
             } 
         }); 
     }, 
+    whatsLive(req, res, next){
+        var start = ["soccer", "football", "tennis", "baseball", "hockey", "cricket"]
+        var live = []
+
+        /*start.forEach((sport) => {*/
+            api.getAllMatches(start[0],/*'insert team name here',*/ function(err, games){ 
+                console.log("starting for " + start[0])
+                if (err) {
+                    console.log("error message is...") 
+                    console.log(err.message); 
+                } else {
+                    if(games != null){
+                        console.log("one live sport is...")
+                        console.log(start[0])
+                        live.push(start[0])
+                    } 
+                } 
+            }); 
+        /*})*/
+        console.log("live sports are...")
+        console.log(live)
+        res.render("static/whatsLive", {live})
+    }
 }
+
+/*
+1. if games returned is null call whatsLive 
+2. whatsLive will call on each sport to see what is live
+3. render a view showing each sport that is live
+
+*/
