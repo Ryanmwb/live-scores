@@ -9,16 +9,22 @@ module.exports = {
         res.render("users/signUp")
     }, 
     signUp(req, res, next){
+        const sgMail = require('@sendgrid/mail');
+        sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+
         let newUser = {
             username: req.body.username,
             email: req.body.email,
             password: req.body.password,
             passwordConf: req.body.passwordConf
+        };
+
+        let msg = {
+            to: newUser.email,
+            from: 'liveScores@gmail.com',
+            subject: 'Welcome to Live-Scores',
+            html: 'Visit Live-Score anytime to get the most up to date scores for your favorite sports and teams!'
         }
-        console.log("req.body is...")
-        console.log(req.body)
-        console.log("User is...")
-        console.log(newUser)
         
         userQueries.createUser(newUser, (err, user) => {
             console.log("starting creating user...")
@@ -31,6 +37,10 @@ module.exports = {
                     res.redirect("/");
                 })
             }
+        });
+        sgMail.send(msg)
+        .catch((err) => {
+            console.log(err)
         })
     }, 
     signInForm(req, res, next){
