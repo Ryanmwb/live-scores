@@ -2,7 +2,7 @@ var api = require('sports-live')
 
 module.exports = {
     soccer(req, res, next){
-        api.getAllMatches('soccer',  function(err, games){ 
+        api.getAllMatches('soccer', /*team name here,*/  function(err, games){ 
             if (err) { 
                 console.log("error message is...") 
                 console.log(err.message); 
@@ -11,22 +11,25 @@ module.exports = {
             } 
         }); 
     }, 
-    football(req, res, next){
-        api.getAllMatches('football',/*'insert team name here',*/ function(err, games){ 
-            if (err) {
+    scores(req, res, next){
+        var sport = req.params.sport;
+        console.log("sport is...")
+        console.log(sport)
+        api.getAllMatches(sport, function(err, games){ 
+            if (err) { 
                 console.log("error message is...") 
                 console.log(err.message); 
             } else { 
                 res.render("scores/scores", {games})
             } 
         }); 
-    }, 
-    whatsLive(req, res, next){
+    },
+    /*whatsLive(req, res, next){
         var start = ["soccer", "football", "tennis", "baseball", "hockey", "cricket"]
         var live = []
 
-        /*start.forEach((sport) => {*/
-            api.getAllMatches(start[0],/*'insert team name here',*/ function(err, games){ 
+        start.forEach((sport) => {
+            api.getAllMatches(start[0],'insert team name here', function(err, games){ 
                 console.log("starting for " + start[0])
                 if (err) {
                     console.log("error message is...") 
@@ -39,11 +42,11 @@ module.exports = {
                     } 
                 } 
             }); 
-        /*})*/
+        })
         console.log("live sports are...")
         console.log(live)
         res.render("static/whatsLive", {live})
-    }
+    }*/
 }
 
 /*

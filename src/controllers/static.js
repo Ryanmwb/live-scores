@@ -15,13 +15,11 @@ module.exports = {
             password: req.body.password,
             passwordConf: req.body.passwordConf
         }
+        console.log("req.body is...")
+        console.log(req.body)
         console.log("User is...")
         console.log(newUser)
-        if(newUser.password != newUser.passwordConf){
-            console.log("password doesn't match...")
-            req.flash("errorMessage", "Password did not match")
-            res.redirect("/sign_up")
-        }
+        
         userQueries.createUser(newUser, (err, user) => {
             console.log("starting creating user...")
             if(err){
