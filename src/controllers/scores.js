@@ -24,21 +24,22 @@ module.exports = {
             } 
         }); 
     },
-    /*whatsLive(req, res, next){
+    whatsLive(req, res, next){
         var start = ["soccer", "football", "tennis", "baseball", "hockey", "cricket"]
         var live = []
 
         start.forEach((sport) => {
-            api.getAllMatches(start[0],'insert team name here', function(err, games){ 
-                console.log("starting for " + start[0])
+            api.getAllMatches(sport, function(err, games){ 
+                console.log("starting for ...")
+                console.log(sport)
                 if (err) {
                     console.log("error message is...") 
                     console.log(err.message); 
                 } else {
                     if(games != null){
                         console.log("one live sport is...")
-                        console.log(start[0])
-                        live.push(start[0])
+                        console.log(sport)
+                        live.push(sport)
                     } 
                 } 
             }); 
@@ -46,7 +47,7 @@ module.exports = {
         console.log("live sports are...")
         console.log(live)
         res.render("static/whatsLive", {live})
-    }*/
+    }
 }
 
 /*
