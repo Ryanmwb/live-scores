@@ -2,7 +2,8 @@ var api = require('sports-live')
 
 module.exports = {
     soccer(req, res, next){
-        api.getAllMatches('soccer', /*team name here,*/  function(err, games){ 
+        api.getAllMatches('soccer', function(err, games){ 
+            console.log("inside soccer api...")
             if (err) { 
                 console.log("error message is...") 
                 console.log(err.message); 
@@ -29,6 +30,8 @@ module.exports = {
         var live = []
 
         start.forEach((sport) => {
+            console.log("beginning of for each.  Sport is...")
+            console.log(sport)
             api.getAllMatches(sport, function(err, games){ 
                 console.log("starting for ...")
                 console.log(sport)
@@ -47,7 +50,25 @@ module.exports = {
         console.log("live sports are...")
         console.log(live)
         res.render("static/whatsLive", {live})
-    }
+    },
+    /*newWhatsLive(req, res, next){
+        var start = ["soccer", "football", "tennis", "baseball", "hockey", "cricket"];
+        var live = [];
+        var counter = 0;
+        
+        start.forEach((sport) => {
+            counter = counter + 1;
+            api.getAllMatches(sport, (err, games) => { 
+                if(games != null){
+                    live.push(sport)
+                } 
+            }
+            counter = counter -1;
+            if (counter === 0) {
+                res.render("static/whatsLive", {live})
+            }
+        })
+    } */  
 }
 
 /*
