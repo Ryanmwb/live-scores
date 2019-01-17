@@ -19,6 +19,9 @@
                   <h5 class="col-sm-2 text-center"><%= game.score %></h5>
                   <h3 class="col-sm-5 text-left"><%= game.team2 %></h3>
                 </div>
+                <div class="row">
+                  <a class=" text-center btn btn-primary" role="button" href="/<%= game.team1 %>/<%= game.team2 %>/chat">Chat</a>
+                </div>
               <% }) %>
         </section>
         <!-- /.row -->

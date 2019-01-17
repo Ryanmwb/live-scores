@@ -4,6 +4,7 @@ module.exports = {
     soccer(req, res, next){
         api.getAllMatches('soccer', function(err, games){ 
             console.log("inside soccer api...")
+            console.log(games)
             if (err) { 
                 console.log("error message is...") 
                 console.log(err.message); 
@@ -62,13 +63,15 @@ module.exports = {
                 if(games != null){
                     live.push(sport)
                 } 
-            }
+            })
             counter = counter -1;
             if (counter === 0) {
                 res.render("static/whatsLive", {live})
+                console.log("live is ...")
+                console.log(live)
             }
         })
-    } */  
+    }  */
 }
 
 /*
