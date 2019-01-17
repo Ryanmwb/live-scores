@@ -10,6 +10,19 @@
             <h1 class="display-1">Chat Show Page</h1>
             <p>chat room id is <%= chat.id %></p>
             <h3><%= chat.team1 %> Vs. <%= chat.team2 %></h3>
+            <% if(currentUser){ %>
+            <form action="POST" action="/<%= chat.id %>/<%= chat.team1 %>/<%= chat.team2 %>/message/create">
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea rows="4" class="form-control" name="message" placeholder="Enter Message Here"></textarea>
+                </div>
+                <br>
+                <br>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+            <% } else { %> 
+                <h1>Must be signed in to create message</h1>
+            <% } %>
       </main>
       <!-- /.container -->
       <% include ../static/partials/baseScripts.ejs %>

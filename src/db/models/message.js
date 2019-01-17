@@ -24,7 +24,7 @@ module.exports = (sequelize, DataTypes) => {
       onDelete: "CASCADE"
     })
     Message.belongsTo(models.Chat, {
-      foreign: "chatId",
+      foreignKey: "chatId",
       onDelete: "CASCADE"
     })
   };
