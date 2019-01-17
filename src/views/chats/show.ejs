@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <% include ../static/partials/head.ejs %>
+  <body>
+    <% include ../static/partials/topNav.ejs %>
+    <% include ../static/partials/messages.ejs %>
+      <!-- Page Content -->
+      <main class="container mt-5 justify-content-center">
+            <h1 class="display-1">Chat Show Page</h1>
+            <p>chat room id is <%= chat.id %></p>
+            <h3><%= chat.team1 %> Vs. <%= chat.team2 %></h3>
+      </main>
+      <!-- /.container -->
+      <% include ../static/partials/baseScripts.ejs %>
+    </body>
+</html>

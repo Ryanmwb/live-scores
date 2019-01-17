@@ -28,6 +28,16 @@ module.exports = {
           as: "userId"
         }
       },
+      username: {
+        type: Sequelize.STRING,
+        allowNull: false,
+        onDelete: "CASCADE",
+        references: {
+          model: "Users",
+          key: "username",
+          as: "username"
+        }
+      },
       message: {
         type: Sequelize.STRING,
         allowNull: false

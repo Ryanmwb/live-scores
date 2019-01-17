@@ -11,7 +11,12 @@ module.exports = {
                 console.log(err);
                 res.redirect("/")
             } else if (chat != null){
+                console.log("about to start findMessages...")
                 messageQueries.findMessages(chat.id, (err, messages) => {
+                    console.log("value returned from findMessages...")
+                    console.log(messages)
+                    console.log("chat is....")
+                    console.log(chat)
                     if(err){
                         console.log(err)
                         res.redirect("/")
