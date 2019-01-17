@@ -15,14 +15,12 @@ module.exports = {
     }, 
     scores(req, res, next){
         var sport = req.params.sport;
-        console.log("sport is...")
-        console.log(sport)
         api.getAllMatches(sport, function(err, games){ 
             if (err) { 
                 console.log("error message is...") 
                 console.log(err.message); 
             } else { 
-                res.render("scores/scores", {games})
+                res.render("scores/scores", {games, sport})
             } 
         }); 
     },
