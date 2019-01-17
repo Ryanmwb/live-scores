@@ -51,7 +51,7 @@ module.exports = {
         console.log("live sports are...")
         console.log(live)
         res.render("static/whatsLive", {live})
-    },
+    }
     /*newWhatsLive(req, res, next){
         var start = ["soccer", "football", "tennis", "baseball", "hockey", "cricket"];
         var live = [];

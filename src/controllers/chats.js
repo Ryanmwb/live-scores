@@ -16,6 +16,10 @@ module.exports = {
                         console.log(err)
                         res.redirect("/")
                     } else {
+                        console.log("chat is...")
+                        console.log(chat)
+                        console.log("Messages is ..")
+                        console.log(messages)
                         res.render("chats/show", {messages, chat})
                     }
                 })
