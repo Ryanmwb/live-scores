@@ -30,8 +30,13 @@ module.exports = {
                 })
             } else if(chat == null){
                 chatQueries.createChat(team1, team2, (err, chat) => {
-                    var messages = null;
-                    res.render("chats/show", {chat, messages})
+                    var messagess = null;
+                    if(err){
+                        console.log(err)
+                        res.redirect("/")
+                    } else {
+                        res.render("chats/show", {chat, messagess})
+                    }  
                 })
             }
         })
