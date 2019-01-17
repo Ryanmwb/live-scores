@@ -28,7 +28,7 @@ module.exports = {
     },
     whatsLive(req, res, next){
         var start = ["soccer", "football", "tennis", "baseball", "hockey", "cricket"]
-        var live = []
+        var live = [];
 
         start.forEach((sport) => {
             console.log("beginning of for each.  Sport is...")
