@@ -7,7 +7,7 @@ const session = require("express-session");
 const flash = require("express-flash");
 const passportConfig = require("./passport-config");
 const bodyParser = require("body-parser");
-const sass = require('node-sass');
+var sassMiddleware = require('node-sass-middleware')
 
 
 module.exports = {
@@ -30,10 +30,10 @@ module.exports = {
             next();
         })
         app.use(flash());
-        app.use(sass({
-            src: __dirname + '../assets',
+        /*app.use(sassMiddleware({
+            src: __dirname + 'assets',
             dest: __dirname + '../assets',
             debug: true
-        }));
+        }));*/
     }
 };
