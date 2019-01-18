@@ -1,4 +1,3 @@
-const scoresQueries = require('../db/queries.scores');
 var api = require('sports-live');
 
 module.exports = {
@@ -14,7 +13,7 @@ module.exports = {
         })
     },
     whatsLive(req, res, next){
-        var start = ["soccer", "football", "tennis", "baseball", "hockey", "cricket"]
+        var start = ["soccer", "football", "tennis", "baseball", "hockey"]
         var live = [];
         var count =0;
 
@@ -40,7 +39,7 @@ module.exports = {
         }        
     }
     /*newWhatsLive(req, res, next){
-        var start = ["soccer", "football", "tennis", "baseball", "hockey", "cricket"];
+        var start = ["soccer", "football", "tennis", "baseball", "hockey"];
         var live = [];
         var counter = 0;
         

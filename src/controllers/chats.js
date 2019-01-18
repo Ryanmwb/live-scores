@@ -1,6 +1,5 @@
 const chatQueries = require('../db/queries.chats');
 const messageQueries = require('../db/queries.messages');
-const scoreQueries = require('../db/queries.scores');
 var api = require('sports-live');
 
 module.exports = {
@@ -20,14 +19,11 @@ module.exports = {
         }
 
         chatQueries.findChat(team1, team2, (err, chat) => {
-            console.log("ONE......")
             if(err){
                 console.log(err);
                 res.redirect("/")
             } else if (chat != null){
-                console.log("2.........")
                 messageQueries.findMessages(chat.id, (err, messagess) => {
-                    console.log("3.........")
                     if(err){
                         console.log(err)
                         res.redirect("/")
@@ -37,15 +33,12 @@ module.exports = {
                     }
                 })
             } else if(chat == null){
-                console.log("TWO....")
                 chatQueries.createChat(team1, team2, (err, chat) => {
-                    console.log("THREE........")
                     var messagess = null;
                     if(err){
                         console.log(err)
                         res.redirect("/")
                     } else {
-                        console.log("FOUR........")
                         getGame(sport, chat, "chats/show", messagess);
                     }  
                 })
