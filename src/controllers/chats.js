@@ -51,7 +51,9 @@ module.exports = {
                     } else {
                         console.log("FOUR........")
                         render = res.render("chats/show", {chat, messagess, sport, score});
-                        getScore();
+                        getScore(render);
+                        console.log("ScORe is....");
+                        console.log(score);
                     }  
                 })
             }
