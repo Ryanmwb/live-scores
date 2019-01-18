@@ -1,54 +1,43 @@
-var api = require('sports-live')
+const scoresQueries = require('../db/queries.scores');
+var api = require('sports-live');
 
 module.exports = {
-    soccer(req, res, next){
-        api.getAllMatches('soccer', function(err, games){ 
-            console.log("inside soccer api...")
-            console.log(games)
-            if (err) { 
-                console.log("error message is...") 
-                console.log(err.message); 
-            } else { 
-                res.render("scores/scores", {games})
-            } 
-        }); 
-    }, 
-    scores(req, res, next){
+    allScores(req, res, next){
         var sport = req.params.sport;
-        api.getAllMatches(sport, function(err, games){ 
-            if (err) { 
-                console.log("error message is...") 
-                console.log(err.message); 
-            } else { 
+        api.getAllMatches(sport, (err, games) => {
+            if(err){
+                console.log(err.message)
+                res.redirect("/")
+            } else {
                 res.render("scores/scores", {games, sport})
-            } 
-        }); 
+            }
+        })
     },
     whatsLive(req, res, next){
         var start = ["soccer", "football", "tennis", "baseball", "hockey", "cricket"]
         var live = [];
+        var count =0;
 
-        start.forEach((sport) => {
-            console.log("beginning of for each.  Sport is...")
-            console.log(sport)
-            api.getAllMatches(sport, function(err, games){ 
-                console.log("starting for ...")
-                console.log(sport)
-                if (err) {
-                    console.log("error message is...") 
-                    console.log(err.message); 
+        for(var i=0; i<start.length; i++){
+            console.log("Loop #......")
+            console.log(count)
+            api.getAllMatches(start[i], (err, games) => {
+                if(err){
+                    console.log(err)
+                    res.redirect("/")
                 } else {
-                    if(games != null){
-                        console.log("one live sport is...")
-                        console.log(sport)
-                        live.push(sport)
-                    } 
-                } 
-            }); 
-        })
-        console.log("live sports are...")
-        console.log(live)
-        res.render("static/whatsLive", {live})
+                    live.push(start[i]);
+                    count = count + 1
+                    if(count >= 6){
+                        console.log("count is....")
+                        console.log(count)
+                        console.log("live is...")
+                        console.log(live)
+                        res.render("static/whatsLive", {live})
+                    }
+                }
+            })
+        }        
     }
     /*newWhatsLive(req, res, next){
         var start = ["soccer", "football", "tennis", "baseball", "hockey", "cricket"];

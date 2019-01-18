@@ -9,7 +9,7 @@
       <main class="container mt-5 justify-content-center">
             <h1 class="display-1">Chat Show Page</h1>
             <h2><%= chat.team1 %> Vs. <%= chat.team2 %></h2>
-            <h2>Score --> <%= score %></h2>
+            <h2>Score --> <%= game.score %></h2>
             <h4>Messages</h4>
             <ul class="list-group"></ul>
                 <% if(messagess != null){ messagess.forEach((message) => { %>
