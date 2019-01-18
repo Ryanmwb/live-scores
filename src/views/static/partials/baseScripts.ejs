@@ -5,3 +5,15 @@ integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
 crossorigin="anonymous">
 </script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script>
+    var sn = $(".side-nav");
+    var pos = sn.position();
+    $(window).scroll(function() {
+        var windowPos = $(window).scrollTop();
+        if (windowPos >= pos.top - 125) {
+            sn.addClass("stick");
+        } else {
+            sn.removeClass("stick");
+        }
+    });
+</script>

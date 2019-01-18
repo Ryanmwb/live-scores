@@ -4,13 +4,15 @@
   <% include ../static/partials/head.ejs %>
   <body>
     <% include ../static/partials/topNav.ejs %>
-    <% include ../static/partials/sideNav.ejs %>
-      <!-- Page Content -->
-      <main class="container mt-5 justify-content-center">
-          <% include ../static/partials/messages.ejs %>
-            <h1 class="display-1">Home Page</h1>
-      </main>
-      <!-- /.container -->
-      <% include ../static/partials/baseScripts.ejs %>
-    </body>
+    <% include ../static/partials/messages.ejs %>
+    
+    <div class="container clearfix">
+      <!-- side nav-->
+      <% include ../static/partials/sideNav.ejs %>
+      <!--content-->
+      <h1>Content will go here</h1>
+    </div>
+
+    <% include ../static/partials/baseScripts.ejs %>
+  </body>
 </html>

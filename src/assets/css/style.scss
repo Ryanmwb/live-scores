@@ -1,0 +1,60 @@
+body{
+    font-family: 'Raleway', sans-serif;
+    font-size: 20px;
+    background: CHARTREUSE;
+  }
+  
+  nav{
+    width: 100%;
+    background: CYAN;
+    padding: 25px;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+  
+  header{
+    width: 100%;
+    margin-top: 75px;
+    background: DARKSLATEBLUE;
+    padding: 100px 0;
+    font-size: 40px;
+    text-align: center;  
+  }
+  
+  .container{
+    padding: 0 40px;
+  }
+  
+  .side-wrapper{
+    position: relative;
+  }
+  
+  .side-nav {
+    float: left;
+    position: relative;
+    top: -17px; 
+    width: 23%;
+    margin-right: 2%;
+    background: DEEPPINK;
+  
+  }
+
+  .side-nav li {
+    list-style: none;
+      padding: 5px 0;
+  }
+  
+.content {
+    width: 70%;
+    margin-left: 25%;
+}
+
+.stick {
+    position:fixed;
+    top:0;
+    left: 40px;
+    margin-top: 125px;
+}
