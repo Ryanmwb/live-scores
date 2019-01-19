@@ -44,6 +44,10 @@ main{
   height: 100%
 }
 
+#shadow{
+  text-shadow: 1px 1px black;
+}
+
 @media only screen and (max-width: 600px) {
   #background{
 
@@ -76,8 +80,8 @@ main{
   }
 
   #sports{
-    margin-right: 4%;
-    margin-left: 4%;
+    margin-right: 3%;
+    margin-left: 3%;
   }
 
 }
