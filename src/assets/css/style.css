@@ -3,18 +3,19 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  height: 75vh;
+  height: 70vh;
   width: 100%;
   margin: 0;
 }
 
 body{
-  height: 180vh;
+  height: 100%;
 }
 
 main{
   height: 100%;
   width: 100%;
+  margin: 0;
 }
 
 #color{
@@ -25,8 +26,20 @@ main{
 #center{
 }
 
-@media (max-width: 575.98px) {
-  #name{
+#sports{
+  background: white;
+  margin-right: 25%;
+  margin-left: 25%;
+  /*margin-top: 20px;*/
+  border-radius: 15px;
+  color: gray;
+  padding-bottom: 12px;
+}
 
-  }
+#background{
+  background-color: lightgray;
+  margin: 0;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  height: 100%
 }

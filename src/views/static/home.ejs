@@ -3,20 +3,6 @@
 
   <% include ../static/partials/head.ejs %>
   <body>
-    <main class="">
-      <header class="" id="header">
-          <div class="" id="color">
-              <% include ../static/partials/topNav.ejs %>
-              <% include ../static/partials/messages.ejs %>
-              <div class="" id="center">
-                  <h1 class="display-2 text-center mb-2 text-light" id="name">Sports-Live</h1>
-                  <h4 class="text-center text-light">Scores and Chatrooms</h4>
-                  <br>
-                  <p class="lead text-light text-center ml-auto mr-auto col-lg-6 col-md-8 col-sm-10">Choose a sport below to get live score! Then pick a chatroom to discuss the game with your friends <em>or</em> enemies.</p>
-              </div>
-          </div>
-      </header>
-      
       <!-- HEADING
         mountain background with color overlay
         Logo/app name big letters in white text
@@ -29,8 +15,53 @@
             white background
       -->
       <!--content-->
+      <header class="" id="header">
+          <div class="" id="color">
+              <% include ../static/partials/topNav.ejs %>
+              <% include ../static/partials/messages.ejs %>
+              <div class="mt-5" id="center">
+                  <h1 class="display-2 text-center mb-2 text-light mt-5" id="name">Sports Live</h1>
+                  <h4 class="text-center text-light">Scores and Chatrooms</h4>
+                  <br>
+                  <p class="lead text-light text-center ml-auto mr-auto col-lg-6 col-md-8 col-sm-10">Choose a sport below to get live scores, then pick a chatroom to discuss the game with your friends <em>or</em> enemies!</p>
+              </div>
+          </div>
+      </header>
+      <main class="" id="background">
+        <section id="sports">
+            <h1 class="text-center pt-0 mb-0 display-3">Scores</h1>
+            <h6 class="ml-auto mr-auto mb-4 text-muted text-center">Pick a sport to see scores</h6>
+            <div class="row ml-auto mr-auto mb-2">
+              <a class="ml-auto" href="/scores/football">
+                  <button type="button " class="btn btn-info ">
+                    Football
+                  </button>
+                </a>
+              <a class="ml-4" href="/scores/baseball">
+                <button type="button " class="btn btn-info ">
+                  Baseball
+                </button>
+              </a>
+              <a class="mr-4 ml-4" href="/scores/soccer">
+                  <button type="button " class="btn btn-info ">
+                    Soccer
+                  </button>
+                </a>
+              <a class="mr-4" href="/scores/tennis">
+                  <button type="button " class="btn btn-info ">
+                    Tennis
+                  </button>
+                </a>
+              <a class="mr-auto" href="/scores/hockey">
+                  <button type="button " class="btn btn-info ">
+                    Hockey
+                  </button>
+                </a>                    
+            </div>
+        </section>
+      </main>
       
-    </main>
+      
 
     <% include ../static/partials/baseScripts.ejs %>
   </body>
