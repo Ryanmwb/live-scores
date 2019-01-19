@@ -43,3 +43,29 @@ main{
   padding-bottom: 15px;
   height: 100%
 }
+
+@media only screen and (max-width: 600px) {
+  #background{
+
+  }
+
+  #sports{
+    margin-right: 4%;
+    margin-left: 4%;
+  }
+
+}
+
+@media only screen and (max-width: 1000px) { 
+  #sports{
+    margin-right: 14%;
+    margin-left: 14%;
+  }
+}
+
+@media only screen and (max-width: 715px) { 
+  #sports{
+    margin-right: 8%;
+    margin-left: 8%;
+  }
+}
