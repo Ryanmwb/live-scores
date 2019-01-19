@@ -69,3 +69,9 @@ main{
     margin-left: 8%;
   }
 }
+
+@media only screen and (max-width: 370px) { 
+  #header{
+    height: 80vh;
+  }
+}
