@@ -74,4 +74,10 @@ main{
   #header{
     height: 80vh;
   }
+
+  #sports{
+    margin-right: 2%;
+    margin-left: 2%;
+  }
+
 }
