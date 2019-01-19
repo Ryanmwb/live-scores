@@ -23,6 +23,10 @@ main{
 }
 
 #center{
-  margin-top: auto;
-  margin-bottom: auto;
+}
+
+@media (max-width: 575.98px) {
+  #name{
+
+  }
 }
