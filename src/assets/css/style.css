@@ -1,0 +1,23 @@
+#header{
+  background-image: url("../images/homebackground.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+body{
+  height: 180vh;
+}
+
+main{
+  height: 100%;
+  width: 100%;
+}
+
+#color{
+  height: 140vh;
+  background: rgba(0, 153, 0, 0.55)
+}
+
