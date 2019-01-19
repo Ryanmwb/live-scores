@@ -5,10 +5,12 @@
   height: 100%;
   width: 100%;
   margin: 0;
+  position: absolute;
 }
 
 body{
   height: 180vh;
+  background: rgba(0, 153, 0, 0.55)
 }
 
 main{
@@ -18,6 +20,7 @@ main{
 
 #color{
   height: 140vh;
-  background: rgba(0, 153, 0, 0.55)
+  background: rgba(0, 153, 0, 0.5);
+  position: relative;
 }
 
