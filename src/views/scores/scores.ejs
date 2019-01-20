@@ -9,20 +9,26 @@
         <!-- Page Features -->
         <section class="scores">
               <div class="row">
-                <h2 class="col-sm-5 text-right"></h2>
+                <h2 class="col-sm-5 text-right font-weight-bold">Team 1</h2>
                 <h2 class="col-sm-2 text-center font-weight-bold">Score</h2>
-                <h2 class="col-sm-5 text-left"></h2>
+                <h2 class="col-sm-5 text-left font-weight-bold">Team 2</h2>
               </div>
-              <% games.forEach((game) => { %>
-                <div class="row">
-                  <h3 class="col-sm-5 text-right "><%= game.team1 %></h3>
-                  <h5 class="col-sm-2 text-center"><%= game.score %></h5>
-                  <h3 class="col-sm-5 text-left"><%= game.team2 %></h3>
+              <% for(var i=0; i < games.length; i++) {%>
+                <% if(i % 2 == 0) { %>
+                  <div class="group">
+                <% } else { %>
+                  <div class="group2">
+                <% } %>
+                  <div class="row">
+                    <h3 class="col-sm-5 text-right "><%= games[i].team1 %></h3>
+                    <h5 class="col-sm-2 text-center"><%= games[i].score %></h5>
+                    <h3 class="col-sm-5 text-left"><%= games[i].team2 %></h3>
+                  </div>
+                  <div class="row">
+                    <a class="ml-auto mr-auto btn btn-primary" role="button" href="/<%= sport %>/<%= games[i].team1 %>/<%= games[i].team2 %>/chat">Join the Chatroom</a>
+                  </div>
                 </div>
-                <div class="row">
-                  <a class=" text-center btn btn-primary" role="button" href="/<%= sport %>/<%= game.team1 %>/<%= game.team2 %>/chat">Chat</a>
-                </div>
-              <% }) %>
+              <% } %>
         </section>
         <!-- /.row -->
 

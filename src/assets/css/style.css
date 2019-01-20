@@ -43,9 +43,24 @@ main{
   padding-bottom: 15px;
   height: 100%
 }
-
+/*blueish green #006E6D*/
 #shadow{
   text-shadow: 1px 1px black;
+}
+
+.group{
+  background: #BCBCBE;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  margin-bottom: 8px;
+  border-radius: 15px;
+}
+
+.group2{
+  background: #EAE6DA;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  margin-bottom: 8px;
 }
 
 @media only screen and (max-width: 600px) {
