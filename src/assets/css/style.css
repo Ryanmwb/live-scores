@@ -43,24 +43,64 @@ main{
   padding-bottom: 15px;
   height: 100%
 }
-/*blueish green #006E6D*/
+#background2{
+  background-color: #fafafa;
+}
+/*blueish green #006E6D
+eclipse blueish purple HEX: #343148
+
+*/
 #shadow{
   text-shadow: 1px 1px black;
 }
 
 .group{
-  background: #BCBCBE;
+  background: #403148;
   padding-top: 8px;
   padding-bottom: 8px;
   margin-bottom: 8px;
   border-radius: 15px;
+  color: white;
 }
 
 .group2{
-  background: #EAE6DA;
+  background: #314248;
   padding-top: 8px;
   padding-bottom: 8px;
   margin-bottom: 8px;
+  border-radius: 15px;
+  color: white;
+}
+
+#pickSportTitle{
+  color: black;
+}
+
+#sports-title{
+  border-bottom: 3px solid black;
+  color: black;
+}
+
+/*CHATROOM */
+#soccer-body{
+  background-image: url(../images/soccerbackground.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/*Signup and SignIn*/
+#signUpBody{
+  background-color: #7F4145;
+}
+
+#signInBody{
+  background-color: #7F4145;
+}
+
+#centerForm{
+  margin: 0 auto;
+  padding: 0 auto;
 }
 
 @media only screen and (max-width: 600px) {

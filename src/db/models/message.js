@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false
     },
     message: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(255),
      allowNull: false}
   }, {});
   Message.associate = function(models) {

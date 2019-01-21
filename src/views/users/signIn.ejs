@@ -2,15 +2,16 @@
 <html lang="en">
 
   <% include ../static/partials/head.ejs %>
-  <body>
+  <body id="signInBody">
+        <% include ../static/partials/topNav.ejs %> 
     <% include ../static/partials/messages.ejs %> 
-    <main class="container ml-auto mr-auto">
-        <h1 class="display-1 pt-3 ">Sign-In</h1>
+    <main class="container" id="centerForm">
+        <h1 class="display-1 pt-3 text-light">Sign-In</h1>
         <form class="col-sm-12 col-md-8 col-lg-6 mt-4" method="POST" action="/signIn">
-            <div class="form-group col-8">
+            <div class="form-group col-8 pl-0">
                 <input type="email" class="form-control" name="email" aria-describedby="emailHelp" placeholder="Enter email">
             </div>
-            <div class="form-group col-8">
+            <div class="form-group col-8 pl-0">
                 <input type="password" class="form-control " name="password" placeholder="Password">
             </div>
             <button class="btn btn-primary" type="submit">Submit</button>

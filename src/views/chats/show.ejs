@@ -2,14 +2,16 @@
 <html lang="en">
 
   <% include ../static/partials/head.ejs %>
-  <body>
+  <body id="<%= sport %>-body">
     <% include ../static/partials/topNav.ejs %>
     <% include ../static/partials/messages.ejs %>
       <!-- Page Content -->
       <main class="container mt-5 justify-content-center">
-            <h1 class="display-1">Chat Show Page</h1>
-            <h2><%= chat.team1 %> Vs. <%= chat.team2 %></h2>
-            <h2>Score --> <%= game.score %></h2>
+            <div class="row text-light">
+                <h3 class="m-0 p-0 display-3 col-5 text-right align-middle"><%= game.team1 %></h3>
+                <h5 class="m-0 p-0 display-3 col-2 text-center align-middle "><%= game.score %></h5>
+                <h3 class="m-0 p-0 display-3 col-5 text-left align-middle"><%= game.team2 %></h3>
+            </div>
             <h4>Messages</h4>
             <ul class="list-group"></ul>
                 <% if(messagess != null){ messagess.forEach((message) => { %>

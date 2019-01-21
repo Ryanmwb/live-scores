@@ -2,35 +2,61 @@
 <html lang="en">
 
   <% include ../static/partials/head.ejs %>
-  <body>
+  <body id="background2">
       <% include ../static/partials/messages.ejs %>
       <% include ../static/partials/topNav.ejs %>
-      <main class="container pt-5">
+      <main class="container" >
         <!-- Page Features -->
+        <h1 id="sports-title" class="pb-0 display-2 text-center pl-auto pr-auto mb-4 ml-auto mr-auto"><%= sport.charAt(0).toUpperCase() + sport.slice(1) %> Scores</h1>
         <section class="scores">
+          <% for(var i=0; i < games.length; i++) {%>
+            <% if(i % 2 == 0) { %>
+              <div class="group">
+            <% } else { %>
+              <div class="group2">
+            <% } %>
               <div class="row">
-                <h2 class="col-sm-5 text-right font-weight-bold">Team 1</h2>
-                <h2 class="col-sm-2 text-center font-weight-bold">Score</h2>
-                <h2 class="col-sm-5 text-left font-weight-bold">Team 2</h2>
+                <h3 class="col-sm-5 text-right "><%= games[i].team1 %></h3>
+                <h5 class="col-sm-2 text-center"><%= games[i].score %></h5>
+                <h3 class="col-sm-5 text-left"><%= games[i].team2 %></h3>
               </div>
-              <% for(var i=0; i < games.length; i++) {%>
-                <% if(i % 2 == 0) { %>
-                  <div class="group">
-                <% } else { %>
-                  <div class="group2">
-                <% } %>
-                  <div class="row">
-                    <h3 class="col-sm-5 text-right "><%= games[i].team1 %></h3>
-                    <h5 class="col-sm-2 text-center"><%= games[i].score %></h5>
-                    <h3 class="col-sm-5 text-left"><%= games[i].team2 %></h3>
-                  </div>
-                  <div class="row">
-                    <a class="ml-auto mr-auto btn btn-primary" role="button" href="/<%= sport %>/<%= games[i].team1 %>/<%= games[i].team2 %>/chat">Join the Chatroom</a>
-                  </div>
-                </div>
-              <% } %>
+              <div class="row">
+                <a class="ml-auto mr-auto btn btn-primary" role="button" href="/<%= sport %>/<%= games[i].team1 %>/<%= games[i].team2 %>/chat">Join the Chatroom</a>
+              </div>
+            </div>
+          <% } %>
         </section>
-        <!-- /.row -->
+        <section id="sports">
+            <h1 id="pickSportTitle" class="text-center pt-0 mb-0 display-3">Sports</h1>
+            <h6 class="ml-auto mr-auto mb-4 text-muted text-center">Pick a sport to see scores</h6>
+            <div class="row ml-auto mr-auto mb-2">
+              <a class="ml-auto" href="/scores/football">
+                  <button type="button " class="btn btn-info ">
+                    Football
+                  </button>
+                </a>
+              <a class="ml-4" href="/scores/baseball">
+                <button type="button " class="btn">
+                  Baseball
+                </button>
+              </a>
+              <a class="mr-4 ml-4" href="/scores/soccer">
+                  <button type="button " class="btn btn-info ">
+                    Soccer
+                  </button>
+                </a>
+              <a class="mr-4" href="/scores/tennis">
+                  <button type="button " class="btn btn-info ">
+                    Tennis
+                  </button>
+                </a>
+              <a class="mr-auto" href="/scores/hockey">
+                  <button type="button " class="btn btn-info ">
+                    Hockey
+                  </button>
+                </a>                    
+            </div>
+        </section>
 
       </main>
       <!-- /.container -->

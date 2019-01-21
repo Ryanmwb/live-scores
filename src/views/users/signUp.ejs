@@ -2,11 +2,12 @@
 <html lang="en">
 
   <% include ../static/partials/head.ejs %>
-  <body>
+  <body id="signUpBody">
       <!-- Page Content -->
+      <% include ../static/partials/topNav.ejs %> 
       <% include ../static/partials/messages.ejs %> 
       <main class="container">
-            <h1 class="display-1 pt-3 pl-0">Sign-Up</h1>
+            <h1 class="display-1 pt-3 pl-0 text-light">Sign-Up</h1>
             <form class="col-sm-6" method="POST" action="/user">
                 <div class="form-group col-10 mt-5 row pl-3">
                     <input type="text" class="form-control" name="username" aria-describedby="emailHelp" placeholder="Enter username">
@@ -23,7 +24,7 @@
                     <small id="passwordlHelp" class="form-text text-muted pt-0 mt-0">Password must be 6 or more characters</small>
                 </div>
                 
-                <button class="btn btn-primary" type="submit">Submit</button>
+                <button class="btn btn-success" type="submit">Submit</button>
             </form>
       </main>
       <!-- /.container -->
