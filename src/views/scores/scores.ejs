@@ -21,7 +21,7 @@
                 <h3 class="col-sm-5 text-left"><%= games[i].team2 %></h3>
               </div>
               <div class="row">
-                <a class="ml-auto mr-auto btn btn-primary" role="button" href="/<%= sport %>/<%= games[i].team1 %>/<%= games[i].team2 %>/chat">Join the Chatroom</a>
+                <a class="ml-auto mr-auto btn btn-light" role="button" href="/<%= sport %>/<%= games[i].team1 %>/<%= games[i].team2 %>/chat">Join the Chatroom</a>
               </div>
             </div>
           <% } %>
@@ -31,27 +31,47 @@
             <h6 class="ml-auto mr-auto mb-4 text-muted text-center">Pick a sport to see scores</h6>
             <div class="row ml-auto mr-auto mb-2">
               <a class="ml-auto" href="/scores/football">
-                  <button type="button " class="btn btn-info ">
+                <% if(sport == 'football') {%>
+                  <button type="button " class="btn btn-light" >
+                <% } else { %>
+                  <button type="button " class="btn btn-info" >
+                <% } %>
                     Football
                   </button>
                 </a>
               <a class="ml-4" href="/scores/baseball">
-                <button type="button " class="btn">
+                <% if(sport == 'baseball') {%>
+                  <button type="button " class="btn btn-light" >
+                <% } else { %>
+                  <button type="button " class="btn btn-info" >
+                <% } %>
                   Baseball
                 </button>
               </a>
               <a class="mr-4 ml-4" href="/scores/soccer">
-                  <button type="button " class="btn btn-info ">
+                <% if(sport == 'soccer') {%>
+                  <button type="button " class="btn btn-light" >
+                <% } else { %>
+                  <button type="button " class="btn btn-info" >
+                <% } %>
                     Soccer
                   </button>
                 </a>
               <a class="mr-4" href="/scores/tennis">
-                  <button type="button " class="btn btn-info ">
+                <% if(sport == 'tennis') {%>
+                  <button type="button " class="btn btn-light" >
+                <% } else { %>
+                  <button type="button " class="btn btn-info" >
+                <% } %>
                     Tennis
                   </button>
                 </a>
               <a class="mr-auto" href="/scores/hockey">
-                  <button type="button " class="btn btn-info ">
+                <% if(sport == 'hockey') {%>
+                  <button type="button " class="btn btn-light" >
+                <% } else { %>
+                  <button type="button " class="btn btn-info" >
+                <% } %>
                     Hockey
                   </button>
                 </a>                    

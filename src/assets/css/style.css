@@ -82,12 +82,85 @@ eclipse blueish purple HEX: #343148
 }
 
 /*CHATROOM */
+#message{
+  border-radius: 12px;
+}
+
+#yourMessage{
+  border-radius: 12px;
+}
+
+#football-body{
+  background-image: url(../images/footballbackground.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 100vh;
+}
+
+#football-main{
+  min-height: 100vh;
+  width: 100%;
+  background-color: null
+}
+
 #soccer-body{
   background-image: url(../images/soccerbackground.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  min-height: 100vh;
 }
+
+#soccer-main{
+  min-height: 100vh;
+  width: 100%;
+  background-color: rgba(88,83,64,0.5)
+}
+
+#baseball-body{
+  background-image: url(../images/baseballbackground.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 100vh;
+}
+
+#baseball-main{
+  min-height: 100vh;
+  width: 100%;
+  background-color: null
+}
+
+#tennis-body{
+  background-image: url(../images/tennisbackground.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 100vh;
+}
+
+#tennis-main{
+  min-height: 100vh;
+  width: 100%;
+  background-color: rgba(58,106,51,0.5)
+}
+
+#hockey-body{
+  background-image: url(../images/hockeybackground.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 100vh;
+}
+
+#hockey-main{
+  min-height: 100vh;
+  width: 100%;
+  background-color: rgba(187,24,25,.5)
+}
+
+
 
 /*Signup and SignIn*/
 #signUpBody{

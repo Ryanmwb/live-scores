@@ -13,7 +13,9 @@ module.exports = {
                 if(err){
                     console.log(err);
                 } else {
-                    res.render(view, {chat, messagess, sport, game});
+                    var score1 = game.score.split("-", 2)[0];
+                    var score2 = game.score.split("-", 2)[1];
+                    res.render(view, {chat, messagess, sport, game, score1, score2});
                 }
             })
         }
@@ -28,7 +30,6 @@ module.exports = {
                         console.log(err)
                         res.redirect("/")
                     } else {
-                        console.log("4................")
                         getGame(sport, chat, "chats/show", messagess);
                     }
                 })

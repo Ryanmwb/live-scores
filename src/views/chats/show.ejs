@@ -3,36 +3,48 @@
 
   <% include ../static/partials/head.ejs %>
   <body id="<%= sport %>-body">
-    <% include ../static/partials/topNav.ejs %>
-    <% include ../static/partials/messages.ejs %>
       <!-- Page Content -->
-      <main class="container mt-5 justify-content-center">
-            <div class="row text-light">
-                <h3 class="m-0 p-0 display-3 col-5 text-right align-middle"><%= game.team1 %></h3>
-                <h5 class="m-0 p-0 display-3 col-2 text-center align-middle "><%= game.score %></h5>
-                <h3 class="m-0 p-0 display-3 col-5 text-left align-middle"><%= game.team2 %></h3>
+      <div id="<%= sport %>-main">
+        <% include ../static/partials/topNav.ejs %>
+        <% include ../static/partials/messages.ejs %>
+      <main class="container mt-2">
+            <div class="row col-lg-8">
+                <h3 class="display-3 text-light mr-auto"><%= game.team1 %></h3>
+                <h5 class="display-3 text-light ml-auto"><%= score1 %></h3>
             </div>
-            <h4>Messages</h4>
-            <ul class="list-group"></ul>
-                <% if(messagess != null){ messagess.forEach((message) => { %>
-                    <li class="list-group-item">
-                         <%= message.message %>
+            <div class="row col-lg-8 mb-5">
+                <h3 class="display-3 text-light mr-auto"><%= game.team2 %></h3>
+                <h5 class="display-3 text-light ml-auto"><%= score2 %></h3>
+            </div>
+            <% if(messagess != null){ %>
+            <h4 class="text-light">Messages</h4>
+                <ul class="list-group"></ul>
+                <% messagess.forEach((message) => { %>
+                    <% if(message.userId == currentUser.id){ %>
+                        <li class="list-group-item text-light text-right bg-success mt-1 ml-5" id="yourMessage">
+                    <% } else { %>
+                        <li class="list-group-item text-light text-left bg-primary mt-1 mr-5" id="message">
+                    <% } %>
+                        <strong><%= message.username %></strong> -- <%= message.message %>
                     </li>
-                <% })  }%>
-            </ul>
+                </ul>
+                <% })  } else {%>
+                <h3 class="text-light mt-2 text-center">There aren't any messages yet.  Be the first to create one!</h3>
+                    <% } %>
             <% if(currentUser){ %>
             <form method="post" action="/<%= sport %>/<%= chat.id %>/<%= chat.team1 %>/<%= chat.team2 %>/message/create">
-                <div class="form-group">
-                    <label for="message">Message</label>
+                <div class="form-group mt-5">
+                    <label for="message" class="text-light">Create Message</label>
                     <textarea rows="4" class="form-control" name="message" placeholder="Enter Message Here"></textarea>
                 </div>
                 <br>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-success">Submit</button>
             </form>
             <% } else { %> 
-                <h1>Must be signed in to create message</h1>
+                <h3 class="text-light mt-5 text-center">You must be signed in to create messages</h3>
             <% } %>
       </main>
+    </div>
       <!-- /.container -->
       <% include ../static/partials/baseScripts.ejs %>
     </body>
