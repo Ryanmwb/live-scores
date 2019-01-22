@@ -10,7 +10,7 @@
         <h1 id="sports-title" class="pb-0 display-2 text-center text-white pl-auto pr-auto mb-4 ml-auto mr-auto"><%= sport.charAt(0).toUpperCase() + sport.slice(1) %> Scores</h1>
         <section class="scores">
           <% if(games.length == 0) { %>
-            <h2 class="ml-5 mr-5 mb-5 mt-5">There are no <%= sport %> games going on right now.  Checkout another sport below for scores.</h2>
+            <h2 class="ml-5 mr-5 mb-5 mt-5 text-light">There are no <%= sport %> games going on right now.  Checkout another sport below for scores.</h2>
           <% } %>
           <% for(var i=0; i < games.length; i++) {%>
             <% if(i % 2 == 0) { %>
