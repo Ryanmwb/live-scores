@@ -27,8 +27,8 @@
           </div>
       </header>
       <main class="" id="background">
-        <section id="sports">
-            <h1 class="text-center pt-0 mb-0 display-3">Scores</h1>
+        <section id="sports" class="hidden-sm-down">
+            <h1 class="text-center pt-0 mb-0 display-3">Available Sports</h1>
             <h6 class="ml-auto mr-auto mb-4 text-muted text-center">Pick a sport to see scores</h6>
             <div class="row ml-auto mr-auto mb-2">
               <a class="ml-auto" href="/scores/football">
@@ -56,6 +56,40 @@
                     Hockey
                   </button>
                 </a>                    
+            </div>
+        </section>
+        <!-- For Mobile devices -->
+        <section id="sports" class="hidden-md-up">
+            <h1 class="text-center pt-0 mb-0 display-4">Sports</h1>
+            <h6 class="ml-auto mr-auto mb-4 text-muted text-center">Pick a sport to see scores</h6>
+            <div class="row ml-auto mr-auto mb-2">
+              <a class="ml-auto" href="/scores/football">
+                  <button type="button " class="btn btn-info ">
+                    Football
+                  </button>
+                </a>
+              <a class="ml-4 mr-4" href="/scores/baseball">
+                <button type="button " class="btn btn-info ">
+                  Baseball
+                </button>
+              </a>
+              <a class="mr-auto" href="/scores/soccer">
+                  <button type="button " class="btn btn-info ">
+                    Soccer
+                  </button>
+                </a>                   
+            </div>
+            <div class="row ml-auto mr-auto mb-2">
+                <a class="mr-auto ml-auto" href="/scores/tennis">
+                  <button type="button " class="btn btn-info ">
+                    Tennis
+                  </button>
+                </a>
+              <a class="mr-auto ml-auto" href="/scores/hockey">
+                  <button type="button " class="btn btn-info ">
+                    Hockey
+                  </button>
+                </a> 
             </div>
         </section>
       </main>
