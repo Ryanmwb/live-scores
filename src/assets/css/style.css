@@ -81,6 +81,10 @@ eclipse blueish purple HEX: #343148
 }
 
 /*CHATROOM */
+#underline{
+  border-bottom: white 5px;
+}
+
 #message{
   border-radius: 12px;
 }
@@ -128,7 +132,7 @@ eclipse blueish purple HEX: #343148
 #baseball-main{
   min-height: 100vh;
   width: 100%;
-  background-color: null
+  background-color: rgba(139,62,25,0.5)
 }
 
 #tennis-body{

@@ -7,17 +7,16 @@
       <div id="<%= sport %>-main">
         <% include ../static/partials/topNav.ejs %>
         <% include ../static/partials/messages.ejs %>
-      <main class="container mt-2">
-            <div class="row col-lg-8">
-                <h3 class="display-3 text-light mr-auto"><%= game.team1 %></h3>
-                <h5 class="display-3 text-light ml-auto"><%= score1 %></h3>
+      <main class="container mt-2" id="underline">
+            <div class="row col-lg-10" id="underline">
+                <h3 class="display-3 text-light mr-3 "><%= score1 %> -</h3>
+                <h5 class="display-3 text-light mr-auto "><%= game.team1 %></h3>
             </div>
-            <div class="row col-lg-8 mb-5">
-                <h3 class="display-3 text-light mr-auto"><%= game.team2 %></h3>
-                <h5 class="display-3 text-light ml-auto"><%= score2 %></h3>
+            <div class="row col-lg-10 mb-5">
+                <h3 class="display-3 text-light mr-3"><%= score2 %> -</h3>
+                <h5 class="display-3 text-light mr-auto"><%= game.team2 %></h3>
             </div>
-            <% if(messagess != null){ %>
-            <h4 class="text-light">Messages</h4>
+            <% if(messagess !== null){ %>
                 <ul class="list-group"></ul>
                 <% messagess.forEach((message) => { %>
                     <% if(message.userId == currentUser.id){ %>
