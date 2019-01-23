@@ -14,22 +14,28 @@
           <% } %>
           <% for(var i=0; i < games.length; i++) { %>
             <% var score1 = games[i].score.split("-", 2)[0];  var score2 = games[i].score.split("-", 2)[1]; %>
+            
             <% if(i % 2 == 0) { %>
               <div class="group">
             <% } else { %>
               <div class="group2">
             <% } %>
-              <div class="row justtify-content-center">
-                <h3 class="ml-auto mr-2 text-dark align-self-center"><%= score1 %> - </h3>
-                <h4 class="mr-auto text-dark align-self-center"><%= games[i].team1 %></h3>
-              </div>
-              <div class="row justtify-content-center">
-                  <h3 class="ml-auto mr-2 text-dark align-self-center"><%= score2 %> - </h3>
-                  <h4 class="mr-auto text-dark align-self-center"><%= games[i].team2 %></h3>
+              <% if(games[i].currentStatus != ''){ %>
+                <div class="row justify-content-center">
+                    <h6 class="mt-1 ml-auto mr-auto text-dark">Current Status: <em><%= games[i].currentStatus %></em></h6>
                 </div>
-              <div class="row">
-                <a class="ml-auto mr-auto btn btn-secondary" role="button" href="/<%= sport %>/<%= games[i].team1 %>/<%= games[i].team2 %>/chat">Join the Chatroom</a>
-              </div>
+              <% } %>
+                <div class="row mt-1 justify-content-center">
+                  <h3 class="ml-auto mr-2 text-dark align-self-center"><%= score1 %> - </h3>
+                  <h3 class="mr-auto text-dark align-self-center"><%= games[i].team1 %></h3>
+                </div>
+                <div class="row justify-content-center">
+                    <h3 class="ml-auto mr-2 text-dark align-self-center"><%= score2 %> - </h3>
+                    <h3 class="mr-auto text-dark align-self-center"><%= games[i].team2 %></h3>
+                  </div>
+                <div class="row">
+                  <a class="mt-1 mb-1 ml-auto mr-auto btn btn-secondary" role="button" href="/<%= sport %>/<%= games[i].team1 %>/<%= games[i].team2 %>/chat">Join the Chatroom</a>
+                </div>
             </div>
           <% } %>
         </section>
