@@ -8,21 +8,25 @@
       <main class="container" >
         <!-- Page Features -->
         <h1 id="sports-title" class="pb-0 display-2 text-center text-white pl-auto pr-auto mb-4 ml-auto mr-auto"><%= sport.charAt(0).toUpperCase() + sport.slice(1) %> Scores</h1>
-        <section class="scores">
+        <section id="scores">
           <% if(games.length == 0) { %>
             <h2 class="ml-5 mr-5 mb-5 mt-5 text-white">There are no <%= sport %> games going on right now.  Checkout another sport below for scores.</h2>
           <% } %>
-          <% for(var i=0; i < games.length; i++) {%>
+          <% for(var i=0; i < games.length; i++) { %>
+            <% var score1 = games[i].score.split("-", 2)[0];  var score2 = games[i].score.split("-", 2)[1]; %>
             <% if(i % 2 == 0) { %>
               <div class="group">
             <% } else { %>
               <div class="group2">
             <% } %>
-              <div class="row">
-                <h3 class="col-sm-5 text-right text-dark"><%= games[i].team1 %></h3>
-                <h5 class="col-sm-2 text-center text-dark"><%= games[i].score %></h5>
-                <h3 class="col-sm-5 text-left text-dark"><%= games[i].team2 %></h3>
+              <div class="row justtify-content-center">
+                <h3 class="ml-auto mr-2 text-dark align-self-center"><%= score1 %> - </h3>
+                <h4 class="mr-auto text-dark align-self-center"><%= games[i].team1 %></h3>
               </div>
+              <div class="row justtify-content-center">
+                  <h3 class="ml-auto mr-2 text-dark align-self-center"><%= score2 %> - </h3>
+                  <h4 class="mr-auto text-dark align-self-center"><%= games[i].team2 %></h3>
+                </div>
               <div class="row">
                 <a class="ml-auto mr-auto btn btn-secondary" role="button" href="/<%= sport %>/<%= games[i].team1 %>/<%= games[i].team2 %>/chat">Join the Chatroom</a>
               </div>

@@ -46,10 +46,7 @@ main{
 #background2{
   background-color: #7F4145;
 }
-/*blueish green #006E6D
-eclipse blueish purple HEX: #343148
 
-*/
 #shadow{
   text-shadow: 1px 1px black;
 }
@@ -82,6 +79,13 @@ eclipse blueish purple HEX: #343148
 
 
 
+
+/* List scores */
+
+#scores{
+  margin-right: 20%;
+  margin-left: 20%;
+}
 
 
 /*CHATROOM */
@@ -197,6 +201,11 @@ eclipse blueish purple HEX: #343148
 @media only screen and (max-width: 600px) {
   #background{
 
+  }
+
+  #scores{
+    margin-right: 4%;
+    margin-left: 4%;
   }
 
   #sports{
