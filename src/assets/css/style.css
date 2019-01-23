@@ -204,6 +204,10 @@ eclipse blueish purple HEX: #343148
     margin-left: 4%;
   }
 
+  .buttons{
+    margin: 0 auto;
+  }
+
 }
 
 @media only screen and (max-width: 1000px) { 
