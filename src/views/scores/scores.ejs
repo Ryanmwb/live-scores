@@ -36,52 +36,42 @@
         <section class="bg-light" id="sports">
             <h1 id="pickSportTitle" class="text-center pt-0 mb-0 display-3">Sports</h1>
             <h6 class="ml-auto mr-auto mb-4 text-muted text-center">Pick a sport to see scores</h6>
-            <div class="row ml-auto mr-auto mb-2">
-              <a class="ml-auto" href="/scores/football">
-                <% if(sport == 'football') {%>
-                  <button type="button " class="btn btn-light" >
-                <% } else { %>
-                  <button type="button " class="btn btn-info" >
-                <% } %>
+            <div class="row ml-auto mr-auto mb-2 justify-content-center">
+              <% if(sport != 'football') {%>
+                <a class="col-lg-2 col-sm-12 col-xs-12 mb-2 buttons" href="/scores/football">
+                  <button type="button " class="btn btn-info">
                     Football
                   </button>
                 </a>
-              <a class="ml-4" href="/scores/baseball">
-                <% if(sport == 'baseball') {%>
-                  <button type="button " class="btn btn-light" >
-                <% } else { %>
-                  <button type="button " class="btn btn-info" >
-                <% } %>
-                  Baseball
-                </button>
-              </a>
-              <a class="mr-4 ml-4" href="/scores/soccer">
-                <% if(sport == 'soccer') {%>
-                  <button type="button " class="btn btn-light" >
-                <% } else { %>
-                  <button type="button " class="btn btn-info" >
-                <% } %>
+              <% } %>
+              <% if(sport != 'baseball') {%>
+                <a class="col-lg-2 col-sm-12 col-xs-12 mb-2 buttons" href="/scores/baseball">
+                  <button type="button " class="btn btn-info ">
+                    Baseball
+                  </button>
+                </a>
+              <% } %>
+              <% if(sport != 'soccer') {%>
+                <a class="col-lg-2 col-sm-12 col-xs-12 mb-2 buttons" href="/scores/soccer">
+                  <button type="button " class="btn btn-info ">
                     Soccer
                   </button>
                 </a>
-              <a class="mr-4" href="/scores/tennis">
-                <% if(sport == 'tennis') {%>
-                  <button type="button " class="btn btn-light" >
-                <% } else { %>
-                  <button type="button " class="btn btn-info" >
-                <% } %>
+              <% } %>
+              <% if(sport != 'tennis') {%>
+                <a class="col-lg-2 col-sm-12 col-xs-12 mb-2 buttons" href="/scores/tennis">
+                  <button type="button " class="btn btn-info ">
                     Tennis
                   </button>
                 </a>
-              <a class="mr-auto" href="/scores/hockey">
-                <% if(sport == 'hockey') {%>
-                  <button type="button " class="btn btn-light" >
-                <% } else { %>
-                  <button type="button " class="btn btn-info" >
-                <% } %>
+              <% } %>
+              <% if(sport != 'hockey') {%>
+                <a class="col-lg-2 col-sm-12 col-xs-12 mb-2 buttons" href="/scores/hockey">
+                  <button type="button " class="btn btn-info ">
                     Hockey
                   </button>
-                </a>                    
+                </a> 
+              <% } %>    
             </div>
         </section>
 

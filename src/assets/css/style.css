@@ -28,8 +28,9 @@ main{
 
 #sports{
   background: white;
-  margin-right: 25%;
-  margin-left: 25%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60vw;
   /*margin-top: 20px;*/
   border-radius: 15px;
   color: gray;
@@ -211,6 +212,7 @@ main{
   #sports{
     margin-right: 4%;
     margin-left: 4%;
+    width: 100vw;
   }
 
   .buttons{
