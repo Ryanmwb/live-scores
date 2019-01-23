@@ -212,7 +212,6 @@ main{
   #sports{
     margin-right: 4%;
     margin-left: 4%;
-    width: 94vw;
   }
 
   .buttons{
@@ -222,7 +221,7 @@ main{
 
 }
 
-@media only screen and (max-width: 750px) { 
+@media only screen and (max-width: 780px) { 
   #sports{
     margin-right: 8%;
     margin-left: 8%;
@@ -231,8 +230,18 @@ main{
 
 @media only screen and (max-width: 1000px) { 
   #sports{
-    margin-right: 14%;
-    margin-left: 14%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .buttons{
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  #scores{
+    margin-right: auto;
+    margin-left: auto;
   }
 }
 
