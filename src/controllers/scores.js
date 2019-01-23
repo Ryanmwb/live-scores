@@ -12,6 +12,18 @@ module.exports = {
             }
         })
     },
+    updateScores(req, res, next) {
+        var { sport, team1, team2 } = req.params;
+        api.getLiveScores(sport, team1, team2, function(err, game) {
+            if ( err != null ) {
+                return res.json({ score1: -1, score2: -1 });
+            }
+            
+            var score1 = game.score.split("-", 2)[0];
+            var score2 = game.score.split("-", 2)[1];
+            res.json({ score1, score2 });
+        });
+    },
     whatsLive(req, res, next){
         var start = ["soccer", "football", "tennis", "baseball", "hockey"]
         var live = [];

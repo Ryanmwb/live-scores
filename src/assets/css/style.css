@@ -80,6 +80,10 @@ eclipse blueish purple HEX: #343148
   border-bottom: 3px solid white;
 }
 
+
+
+
+
 /*CHATROOM */
 #underline{
   border-bottom: white 5px;
@@ -165,6 +169,10 @@ eclipse blueish purple HEX: #343148
 
 
 
+
+
+
+
 /*Signup and SignIn*/
 #signUpBody{
   background-color: #7F4145;
@@ -178,6 +186,13 @@ eclipse blueish purple HEX: #343148
   margin: 0 auto;
   padding: 0 auto;
 }
+
+
+
+
+
+
+/* Media Queries */
 
 @media only screen and (max-width: 600px) {
   #background{
