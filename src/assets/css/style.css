@@ -210,8 +210,9 @@ main{
   }
 
   #sports{
-    margin-right: 4%;
-    margin-left: 4%;
+    margin-right: auto;
+    margin-left: auto;
+    min-width: 90vw;
   }
 
   .buttons{
