@@ -199,9 +199,9 @@ main{
 
 /* Media Queries */
 
-@media only screen and (max-width: 600px) {
-  #background{
-
+@media only screen and (max-width: 400px) {
+  #header{
+    height: 90vh;
   }
 
   #scores{
@@ -212,7 +212,7 @@ main{
   #sports{
     margin-right: 4%;
     margin-left: 4%;
-    width: 100vw;
+    width: 94vw;
   }
 
   .buttons{
@@ -222,6 +222,13 @@ main{
 
 }
 
+@media only screen and (max-width: 750px) { 
+  #sports{
+    margin-right: 8%;
+    margin-left: 8%;
+  }
+}
+
 @media only screen and (max-width: 1000px) { 
   #sports{
     margin-right: 14%;
@@ -229,21 +236,4 @@ main{
   }
 }
 
-@media only screen and (max-width: 715px) { 
-  #sports{
-    margin-right: 8%;
-    margin-left: 8%;
-  }
-}
 
-@media only screen and (max-width: 370px) { 
-  #header{
-    height: 90vh;
-  }
-
-  #sports{
-    margin-right: 3%;
-    margin-left: 3%;
-  }
-
-}
