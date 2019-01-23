@@ -9,12 +9,12 @@
         <% include ../static/partials/messages.ejs %>
       <main class="container mt-2" id="underline">
             <div class="row justify-content-center">
-                <h3 class="display-3 ml-auto mr-3 text-light align-self-center"><%= score1 %> - </h3>
-                <h4 class="display-3 mr-auto text-light align-self-center"><%= game.team1 %></h4>
+                <h3 class="display-3 ml-auto mr-3 text-light align-self-center" id="score1"><%= score1 %> - </h3>
+                <h4 class="display-3 mr-auto text-light align-self-center" id="team1"><%= game.team1 %></h4>
             </div>
             <div class="row justtify-content-center">
-                <h3 class="display-3 ml-auto mr-3 text-light align-self-center"><%= score2 %> - </h3>
-                <h4 class="display-3 mr-auto text-light align-self-center"><%= game.team2 %></h3>
+                <h3 class="display-3 ml-auto mr-3 text-light align-self-center" id="score2"><%= score2 %> - </h3>
+                <h4 class="display-3 mr-auto text-light align-self-center" id="team2"><%= game.team2 %></h3>
             </div>
             <% if(messagess != null){ %>
                 <ul class="list-group"></ul>
@@ -56,6 +56,13 @@
                 success: function(data, textStatus, xhr) {
                     $('#score1').text(data.score1);
                     $('#score2').text(data.score2);
+                },
+                error: function(){
+                    $('#score1').hide();
+                    $('#score2').hide();
+                    $('#team1').empty();
+                    $('#team2').hide();
+                    $('#team1').append("This game has ended.  Check out some other games!")
                 }
             });
         }, 60 * 1000);

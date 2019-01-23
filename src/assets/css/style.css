@@ -205,8 +205,8 @@ main{
   }
 
   #scores{
-    margin-right: 4%;
-    margin-left: 4%;
+    margin-right: 3%;
+    margin-left: 3%;
   }
 
   #sports{
@@ -215,7 +215,7 @@ main{
     min-width: 90vw;
   }
 
-  .buttons{
+  .button-link{
     margin: 0 auto;
     text-align: center;
   }
@@ -235,7 +235,7 @@ main{
     margin-left: auto;
   }
 
-  .buttons{
+  .button-link{
     margin: 0 auto;
     text-align: center;
   }
@@ -246,4 +246,9 @@ main{
   }
 }
 
+@media only screen and (min-width: 1001px) { 
+  .button{
+    margin: 0, 10px;
+  }
+}
 
