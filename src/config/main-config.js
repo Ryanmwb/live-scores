@@ -7,33 +7,40 @@ const session = require("express-session");
 const flash = require("express-flash");
 const passportConfig = require("./passport-config");
 const bodyParser = require("body-parser");
-var sassMiddleware = require('node-sass-middleware')
+var Sequelize = require('sequelize')
+//var cookieParser = require('cookie-parser')
+var SequelizeStore = require('connect-session-sequelize')(session.Store);
 
-
-module.exports = {
-    init(app, express){
-        app.set("views", viewsFolder);
-        app.set("view engine", "ejs");
-        app.use(bodyParser.urlencoded({ extended: true }));
-        app.use(express.static(path.join(__dirname, "..", "assets")));
-        app.use(logger('dev'));
-        app.use(expressValidator());
-        app.use(session({
-            secret: process.env.secret,
-            resave: false,
-            saveUninitialized: false,
-            cookie: { maxAge: 1.21e+9 } //set cookie to expire in 14 days
-        }));
-        passportConfig.init(app);
-        app.use((req,res,next) => {
-            res.locals.currentUser = req.user;
-            next();
-        })
-        app.use(flash());
-        /*app.use(sassMiddleware({
-            src: __dirname + 'assets',
-            dest: __dirname + '../assets',
-            debug: true
-        }));*/
+var sequelize = new Sequelize(
+    "database",
+    "username",
+    "password", {
+      "dialect": "postgres"
     }
-};
+  );
+  
+  module.exports = { 
+    init(app, express){ 
+      app.set("views", viewsFolder); 
+      app.set("view engine", "ejs"); 
+      app.use(bodyParser.urlencoded({ extended: true })); 
+      app.use(express.static(path.join(__dirname, "..", "assets"))); 
+      app.use(logger('dev')); 
+      app.use(expressValidator()); 
+      app.use(session({ 
+        store: new SequelizeStore({
+          db: sequelize
+        }),
+        secret: process.env.secret, 
+        resave: false, 
+        saveUninitialized: false, 
+        cookie: { maxAge: 1.21e+9 } //set cookie to expire in 14 days 
+      }));
+      passportConfig.init(app); 
+      app.use((req,res,next) => { 
+        res.locals.currentUser = req.user; 
+        next(); 
+      }) 
+      app.use(flash()); 
+    } 
+  }
