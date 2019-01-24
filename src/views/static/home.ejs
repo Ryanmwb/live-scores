@@ -22,8 +22,12 @@
                   <h1 id="shadow" class="display-2 text-center mb-2 text-light mt-5" id="name">Sports Live</h1>
                   <h4 id="shadow" class="text-center text-light">Scores and Chatrooms</h4>
                   <br>
-                  <p id="shadow" class="lead text-light text-center ml-auto mr-auto col-lg-6 col-md-8 col-sm-10">Choose a sport below to get live scores, then pick a chatroom to discuss the game with your friends <em>or</em> enemies!</p>
-              </div>
+                  <% if(currentUser) { %>
+                    <p id="shadow" class="lead text-light text-center ml-auto mr-auto col-lg-6 col-md-8 col-sm-10"><%= currentUser.username %>, pick a sport below to get live scores!</p>
+                  <% } else { %>
+                    <p id="shadow" class="lead text-light text-center ml-auto mr-auto col-lg-6 col-md-8 col-sm-10">Choose a sport below to get live scores, then join the chatroom to discuss the game with your friends <em>or</em> enemies!</p>
+                  <% } %>
+                </div>
           </div>
       </header>
       <main class="" id="background">
