@@ -28,9 +28,9 @@ var sequelize = new Sequelize(
       app.use(logger('dev')); 
       app.use(expressValidator()); 
       app.use(session({ 
-        store: new SequelizeStore({
+        /*store: new SequelizeStore({
           db: sequelize
-        }),
+        }),*/
         secret: process.env.secret, 
         resave: false, 
         saveUninitialized: false, 
