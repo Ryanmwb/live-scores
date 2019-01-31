@@ -24,3 +24,5 @@ An application that displays scores of your favorite teams and join a chatroom f
 * Sendgrid
 * Sports-live
 * Pg
+
+## App is live at https://live-scores-ryan.herokuapp.com/
