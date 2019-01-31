@@ -1,7 +1,7 @@
 ## Important Note
 Below is the link the view the application live, but since I have the free version of Heroku I sometimes exceed my API call limit and the app crashes.  But there is never an issue with it when running locally, so if you clone this repo you will need to do a couple things:
 1) Create a .env file in the root directory
-2) Create a `secret` variable with a value of your choosing
+2) Create a `secret` variable with a value of your choosing. Ex) `secret='123456'`.
 3) Create and add a Sendgrid API key (`SENDGRID_API_KEY`).  Here are instuctions --> https://sendgrid.com/docs/ui/account-and-settings/api-keys/
 
 # What is Live-Scores
