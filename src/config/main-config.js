@@ -8,16 +8,17 @@ const flash = require("express-flash");
 const passportConfig = require("./passport-config");
 const bodyParser = require("body-parser");
 var Sequelize = require('sequelize')
-//var cookieParser = require('cookie-parser')
-var SequelizeStore = require('connect-session-sequelize')(session.Store);
+/*var cookieParser = require('cookie-parser')
+var SequelizeStore = require('connect-session-sequelize')(session.Store);*/
+var DelayedResponse = require('http-delayed-response');
 
-var sequelize = new Sequelize(
+/*var sequelize = new Sequelize(
     "database",
     "username",
     "password", {
       "dialect": "postgres"
     }
-  );
+  );*/
   
   module.exports = { 
     init(app, express){ 
